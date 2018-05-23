@@ -1,0 +1,5 @@
+*.pkl
+*.pyc
+*.caffemodel
+feature/
+
