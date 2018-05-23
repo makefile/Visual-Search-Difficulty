@@ -2,12 +2,14 @@
 
 This repo is a python version of [Visual Search Difficulty Prediction Model](http://image-difficulty.herokuapp.com/) proposed in paper [How hard can it be? Estimating the difficulty of visual search in an image](http://calvin.inf.ed.ac.uk/wp-content/uploads/Publications/ionescu16cvpr.pdf). The original implementation is of Matlab code.
 
-![image-difficulty](http://image-difficulty.herokuapp.com/PredictedScoresSorted_refined2.png)
+![image-difficulty](./image-difficulty.png)
 
 ## Dependency
 
 Feature extraction uses Caffe model, such as `VGG-f`.  So prepare Caffe python interface first.
+
 Regression model uses `nu-SVR`(from sklearn based on libsvm).
+
 Dataset: VOC2012
 
 ## Usage
@@ -15,8 +17,8 @@ Dataset: VOC2012
 1. Download VGG_CNN_F model of the BMVC-2014 paper: "Return of the Devil in the Details: Delving Deep into Convolutional Nets" [from here](https://gist.github.com/ksimonyan/a32c9063ec8e1118221a#file-readme-md).
 2. Compute the CNN features for all the images in PASCAL VOC 2012. Generate pairwise kernel matrix from feature vectors. run `getFeature.py`
 3. Train and test regression model
-	train: `SVR.py` 
-	test: `getScore.py`
+    - train: `SVR.py` 
+    - test: `getScore.py`
 
 This method may be used like in paper `Optimizing the Trade-off between Single-Stage and Two-Stage Object Detectors using Image Difficulty Prediction`([arXiv](https://arxiv.org/abs/1803.08707)).
 
